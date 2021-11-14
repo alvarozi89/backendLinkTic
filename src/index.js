@@ -9,7 +9,8 @@ require('./database')
 
 //Configuramos para escuchar el puerto
 
-app.set('Port', 4000)
+//app.set('Port', 4000)
+app.set('Port', process.env.PORT || 4000);
 app.use(morgan('dev'))
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
@@ -23,3 +24,7 @@ app.use('/persona', require('./routes/Personas.routes'))
 app.listen(app.get('Port'), () => {
     console.log('Servidor escuchando por el puertooo :', app.get('Port'))
 })
+
+
+
+
