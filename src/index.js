@@ -13,7 +13,7 @@ app.set('Port', 4000)
 app.use(morgan('dev'))
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
-app.use(cors())
+app.use(cors({ origen: '*' }))
 
 app.use('/ciudad', require('./routes/Ciudad.routes'))
 app.use('/persona', require('./routes/Personas.routes'))
