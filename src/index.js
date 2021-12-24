@@ -9,21 +9,22 @@ require('./database')
 
 //Configuramos para escuchar el puerto
 
-//app.set('Port', 4000)
 app.set('Port', process.env.PORT || 4000);
 app.use(morgan('dev'))
 app.use(bodyparser.urlencoded({ extended: true }))
 app.use(bodyparser.json())
 app.use(cors({ origen: '*' }))
 
-app.use('/ciudad', require('./routes/Ciudad.routes'))
-app.use('/persona', require('./routes/Personas.routes'))
+app.use('/sucursal', require('./routes/Sucursal.routes'))
+app.use('/producto', require('./routes/Productos.routes'))
 
 //prueba para escuchar el puerto
 
 app.listen(app.get('Port'), () => {
     console.log('Servidor escuchando por el puertooo :', app.get('Port'))
 })
+
+
 
 
 

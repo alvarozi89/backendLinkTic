@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-const CiudadSchema = new Schema({
+const SucursalSchema = new Schema({
     nombre: String,
     correo: String,
     contrasena: String,
@@ -10,4 +10,4 @@ const CiudadSchema = new Schema({
 
 })
 // Convertir a modelo
-module.exports = mongoose.model('ciudad', CiudadSchema)
+module.exports = mongoose.model('sucursal', SucursalSchema)
